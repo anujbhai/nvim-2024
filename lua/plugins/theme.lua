@@ -53,19 +53,12 @@ return {
     main = "ibl",
     opts = {},
     config = function()
-      -- local highlight = {
-      --   "CursorColumn",
-      --   "Whitespace",
-      -- }
-
       require("ibl").setup({
         indent = {
-          -- highlight = highlight,
           char = "│",
           tab_char = "│",
         },
         whitespace = {
-          -- highlight = highlight,
           remove_blankline_trail = false,
         },
         scope = { enabled = false },
@@ -116,7 +109,7 @@ return {
     end,
     config = function()
       require("mini.indentscope").setup()
-    end
+    end,
   },
   {
     "folke/noice.nvim",
@@ -125,12 +118,12 @@ return {
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
-    }
+    },
   },
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
-    init = function ()
+    init = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
     end,
