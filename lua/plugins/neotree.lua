@@ -7,15 +7,17 @@ return {
     "MunifTanjim/nui.nvim",
     -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
   },
-  config = function ()
-    vim.keymap.set('n', '<C-n>', ':Neotree filesystem toggle<CR>', {})
-    vim.keymap.set('n', '<leader>e', ':Neotree filesystem focus<CR>', {})
+  config = function()
+    vim.keymap.set("n", "<C-n>", ":Neotree filesystem toggle<CR>", {})
+    vim.keymap.set("n", "<leader>e", ":Neotree filesystem focus<CR>", {})
 
-    require('neo-tree').setup({
+    require("neo-tree").setup({
       filesystem = {
-        hijack_netrw_behaviour = 'open_default',
+        hijack_netrw_behaviour = "open_default",
+        filtered_items = {
+          hide_dotfiles = false,
+        },
       },
     })
-  end
+  end,
 }
-
