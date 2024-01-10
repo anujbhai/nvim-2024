@@ -25,9 +25,10 @@ return {
       bufferline.setup({
         options = {
           separator_style = "slant",
-          close_command = function(bufnum)
-            require("mini.bufremove").delete(bufnum, true)
-          end,
+          close_command = "bdelete! %d",
+          -- close_command = function(bufnum)
+          --   require("mini.bufremove").delete(bufnum, true)
+          -- end,
           diagnostics = "nvim_lsp",
           always_show_bufferline = true,
           offsets = {
@@ -41,10 +42,9 @@ return {
         },
       })
 
-      -- vim.keymap.set("n", "<leader>x", ":BufferLineClose<CR>", {
-      --   noremap = true,
-      --   silent = true,
-      -- })
+      vim.keymap.set("n", "<leader>x", ":bdelete!<CR>", {})
+      vim.keymap.set("n", "<tab>", ":BufferLineCyclePrev<CR>", {})
+      vim.keymap.set("n", "<S-tab>", ":BufferLineCycleNext<CR>", {})
     end,
     opts = {},
   },
