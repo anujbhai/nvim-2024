@@ -12,6 +12,10 @@ vim.cmd("set cursorcolumn")
 
 vim.cmd("set mouse=a")
 
+-- folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
 -- keymap leader
 vim.g.mapleader = " "
 
