@@ -40,4 +40,21 @@ return {
       require("gitsigns").setup({})
     end,
   },
+  {
+    "github/copilot.vim",
+    lazy = false,
+    config = function()
+      -- mappings required
+    end,
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+    config = function()
+      vim.keymap.set("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", {})
+      vim.keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", {})
+      vim.keymap.set("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", {})
+      vim.keymap.set("n", "<C-k>", "<cmd> TmuxNavigateTop<CR>", {})
+    end,
+  },
 }

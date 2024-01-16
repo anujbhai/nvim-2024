@@ -12,6 +12,8 @@ vim.cmd("set cursorcolumn")
 
 vim.cmd("set mouse=a")
 
+vim.opt.guicursor = ""
+
 -- folding
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
